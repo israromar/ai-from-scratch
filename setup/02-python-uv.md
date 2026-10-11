@@ -9,7 +9,7 @@
 - OS: macOS 15.7.9 (Intel x86_64)
 - `uv`: 0.13.0 → `/Users/apple/.local/bin/uv`
 - Python: 3.12.15 (via uv)
-- Packages: NumPy 2.5.4, plus matplotlib and jupyter (installed with uv pip)
+- Packages: NumPy initially 2.5.4 (later pinned to 1.26.4 for PyTorch — see [06-pytorch.md](06-pytorch.md)); matplotlib and jupyter via uv pip
 - Venv location: `/Users/apple/.venv` (created from home directory)
 
 ## Commands

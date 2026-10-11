@@ -11,7 +11,7 @@
 | Phase | 00 — Setup & Tooling |
 | Lesson | [01 — Dev Environment](https://aiengineeringfromscratch.com/lesson?path=phases%2F00-setup-and-tooling%2F01-dev-environment&learningPath=software-engineering-fundamentals) |
 | Status | `doing` |
-| Next action | Step 6: install PyTorch (CPU on Intel Mac) |
+| Next action | Step 7: clone official course repo and run `verify.py` |
 
 ## Phase 00 — Setup & Tooling
 
@@ -22,7 +22,7 @@
 | 01 Dev Environment — Step 3 Node.js / pnpm | `done` | [setup/03-nodejs-fnm-pnpm.md](setup/03-nodejs-fnm-pnpm.md) |
 | 01 Dev Environment — Step 4 Rust | `done` | [setup/04-rust.md](setup/04-rust.md) |
 | 01 Dev Environment — Step 5 Julia (optional) | `done` | [setup/05-julia.md](setup/05-julia.md) |
-| 01 Dev Environment — Step 6 GPU / PyTorch | `todo` | |
+| 01 Dev Environment — Step 6 GPU / PyTorch | `done` | [setup/06-pytorch.md](setup/06-pytorch.md) |
 | 01 Dev Environment — Step 7 Route verify | `todo` | |
 | Lesson log | `doing` | [lessons/phase-00-setup-and-tooling/01-dev-environment.md](lessons/phase-00-setup-and-tooling/01-dev-environment.md) |
 | Next lesson: Git & Collaboration | `todo` | |

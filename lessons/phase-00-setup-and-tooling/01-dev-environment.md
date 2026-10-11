@@ -17,7 +17,7 @@ Set up the four-layer AI engineering stack (system → packages → runtimes →
 - [x] Step 3 — Node.js with `fnm` + `pnpm` (Node v22.23.3, pnpm 11.2.2)
 - [x] Step 4 — Rust (`rustc`/`cargo` 1.99.0)
 - [x] Step 5 — Julia 1.13.1 (optional)
-- [ ] Step 6 — GPU / PyTorch (CPU on Intel Mac; no CUDA/MPS expected)
+- [x] Step 6 — PyTorch 2.2.2 + NumPy 1.26.4 (CPU; CUDA/MPS false on Intel)
 - [ ] Step 7 — Route verify (`verify.py --route …`) — needs the official course repo cloned separately when we get there
 
 ## Commands
@@ -69,6 +69,16 @@ julia -e 'println("Julia ", VERSION)'
 
 Full notes: [setup/05-julia.md](../../setup/05-julia.md).
 
+Step 6 (done):
+
+```bash
+source ~/.venv/bin/activate
+uv pip install torch torchvision torchaudio
+uv pip install 'numpy<2'   # Intel Mac: torch 2.2.2 needs NumPy 1.x
+```
+
+Full notes: [setup/06-pytorch.md](../../setup/06-pytorch.md).
+
 ## Verify
 
 Step 1:
@@ -83,7 +93,7 @@ Step 2:
 
 ```text
 Python 3.12.15 (main, Oct  9 2026, 15:10:54) [Clang 22.1.3 ]
-NumPy 2.5.4
+NumPy 2.5.4   # later pinned to 1.26.4 for torch — see Step 6
 Vector: [1 2 3], dot product with itself: 14
 ```
 
@@ -108,6 +118,15 @@ Step 5:
 Julia 1.13.1
 ```
 
+Step 6:
+
+```text
+NumPy 1.26.4
+torch 2.2.2
+CUDA available: False
+MPS available:  False
+```
+
 ## Notes / blockers
 
 - Working on Intel macOS; Homebrew source builds make Step 1 slow but succeeded.
@@ -115,15 +134,15 @@ Julia 1.13.1
 - Do not paste Python into zsh — enter `python` first.
 - Step 3: `fnm use` failed until `source ~/.zshrc`; `npm i -g pnpm` hit EEXIST because pnpm already existed via nvm — ignore and use existing pnpm.
 - Skip the lesson’s `arch -arm64 brew install fnm` block on Intel.
+- Step 6: torch 2.2.2 is the newest wheel for macOS x86_64; keep `numpy<2`. CUDA/MPS false is expected.
 - Step 7 assumes the official curriculum repo (with `phases/…/verify.py`). This journal does not clone it; clone that repo separately when ready to run the preflight.
 
 ## Artifacts
 
-- Setup: [setup/01-system-foundation.md](../../setup/01-system-foundation.md), [setup/02-python-uv.md](../../setup/02-python-uv.md), [setup/03-nodejs-fnm-pnpm.md](../../setup/03-nodejs-fnm-pnpm.md), [setup/04-rust.md](../../setup/04-rust.md), [setup/05-julia.md](../../setup/05-julia.md)
+- Setup: [setup/01-system-foundation.md](../../setup/01-system-foundation.md), [setup/02-python-uv.md](../../setup/02-python-uv.md), [setup/03-nodejs-fnm-pnpm.md](../../setup/03-nodejs-fnm-pnpm.md), [setup/04-rust.md](../../setup/04-rust.md), [setup/05-julia.md](../../setup/05-julia.md), [setup/06-pytorch.md](../../setup/06-pytorch.md)
 - Code: (none yet)
 
 ## Next
 
-1. Step 6 — PyTorch (CPU wheels; no CUDA index on Mac)
-2. Step 7 — route verify (needs official course repo)
-3. Update this log + `PROGRESS.md` after each step; commit once per step
+1. Step 7 — clone official course repo and run route verify
+2. Update this log + `PROGRESS.md`; commit once per step
