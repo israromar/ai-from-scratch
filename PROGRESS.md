@@ -11,7 +11,7 @@
 | Phase | 00 — Setup & Tooling |
 | Lesson | [01 — Dev Environment](https://aiengineeringfromscratch.com/lesson?path=phases%2F00-setup-and-tooling%2F01-dev-environment&learningPath=software-engineering-fundamentals) |
 | Status | `doing` |
-| Next action | Step 4: Rust via `rustup` |
+| Next action | Step 5 (optional Julia) or Step 6: PyTorch |
 
 ## Phase 00 — Setup & Tooling
 
@@ -20,7 +20,7 @@
 | 01 Dev Environment — Step 1 System Foundation | `done` | [setup/01-system-foundation.md](setup/01-system-foundation.md) |
 | 01 Dev Environment — Step 2 Python / uv | `done` | [setup/02-python-uv.md](setup/02-python-uv.md) |
 | 01 Dev Environment — Step 3 Node.js / pnpm | `done` | [setup/03-nodejs-fnm-pnpm.md](setup/03-nodejs-fnm-pnpm.md) |
-| 01 Dev Environment — Step 4 Rust | `todo` | |
+| 01 Dev Environment — Step 4 Rust | `done` | [setup/04-rust.md](setup/04-rust.md) |
 | 01 Dev Environment — Step 5 Julia (optional) | `todo` | |
 | 01 Dev Environment — Step 6 GPU / PyTorch | `todo` | |
 | 01 Dev Environment — Step 7 Route verify | `todo` | |
