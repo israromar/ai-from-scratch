@@ -16,8 +16,8 @@ Set up the four-layer AI engineering stack (system → packages → runtimes →
 - [x] Step 2 — Python with `uv` (3.12.15, NumPy 2.5.4)
 - [x] Step 3 — Node.js with `fnm` + `pnpm` (Node v22.23.3, pnpm 11.2.2)
 - [x] Step 4 — Rust (`rustc`/`cargo` 1.99.0)
-- [ ] Step 5 — Julia (optional)
-- [ ] Step 6 — GPU / PyTorch (MPS notes for Apple; CPU OK if no GPU)
+- [x] Step 5 — Julia 1.13.1 (optional)
+- [ ] Step 6 — GPU / PyTorch (CPU on Intel Mac; no CUDA/MPS expected)
 - [ ] Step 7 — Route verify (`verify.py --route …`) — needs the official course repo cloned separately when we get there
 
 ## Commands
@@ -61,6 +61,14 @@ cargo --version
 
 Full notes: [setup/04-rust.md](../../setup/04-rust.md).
 
+Step 5 (done):
+
+```bash
+julia -e 'println("Julia ", VERSION)'
+```
+
+Full notes: [setup/05-julia.md](../../setup/05-julia.md).
+
 ## Verify
 
 Step 1:
@@ -94,6 +102,12 @@ rustc 1.99.0 (b940084d7 2026-09-28)
 cargo 1.99.0 (5f94df478 2026-08-27)
 ```
 
+Step 5:
+
+```text
+Julia 1.13.1
+```
+
 ## Notes / blockers
 
 - Working on Intel macOS; Homebrew source builds make Step 1 slow but succeeded.
@@ -105,11 +119,11 @@ cargo 1.99.0 (5f94df478 2026-08-27)
 
 ## Artifacts
 
-- Setup: [setup/01-system-foundation.md](../../setup/01-system-foundation.md), [setup/02-python-uv.md](../../setup/02-python-uv.md), [setup/03-nodejs-fnm-pnpm.md](../../setup/03-nodejs-fnm-pnpm.md), [setup/04-rust.md](../../setup/04-rust.md)
+- Setup: [setup/01-system-foundation.md](../../setup/01-system-foundation.md), [setup/02-python-uv.md](../../setup/02-python-uv.md), [setup/03-nodejs-fnm-pnpm.md](../../setup/03-nodejs-fnm-pnpm.md), [setup/04-rust.md](../../setup/04-rust.md), [setup/05-julia.md](../../setup/05-julia.md)
 - Code: (none yet)
 
 ## Next
 
-1. Step 5 — Julia (optional) or skip to Step 6 — PyTorch
+1. Step 6 — PyTorch (CPU wheels; no CUDA index on Mac)
 2. Step 7 — route verify (needs official course repo)
 3. Update this log + `PROGRESS.md` after each step; commit once per step
