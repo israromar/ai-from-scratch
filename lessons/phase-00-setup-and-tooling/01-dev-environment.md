@@ -14,7 +14,7 @@ Set up the four-layer AI engineering stack (system → packages → runtimes →
 
 - [x] Step 1 — System Foundation (`git`, `curl`, `wget` via Homebrew)
 - [x] Step 2 — Python with `uv` (3.12.15, NumPy 2.5.4)
-- [ ] Step 3 — Node.js with `pnpm` (via `fnm`)
+- [x] Step 3 — Node.js with `fnm` + `pnpm` (Node v22.23.3, pnpm 11.2.2)
 - [ ] Step 4 — Rust (`rustup`)
 - [ ] Step 5 — Julia (optional)
 - [ ] Step 6 — GPU / PyTorch (MPS notes for Apple; CPU OK if no GPU)
@@ -38,6 +38,18 @@ python   # then paste the verify snippet inside the REPL
 
 Full notes: [setup/02-python-uv.md](../../setup/02-python-uv.md).
 
+Step 3 (done):
+
+```bash
+curl -fsSL https://fnm.vercel.app/install | bash
+source ~/.zshrc
+fnm use 22
+node -e "console.log('Node', process.version)"
+pnpm -v
+```
+
+Full notes: [setup/03-nodejs-fnm-pnpm.md](../../setup/03-nodejs-fnm-pnpm.md).
+
 ## Verify
 
 Step 1:
@@ -56,20 +68,29 @@ NumPy 2.5.4
 Vector: [1 2 3], dot product with itself: 14
 ```
 
+Step 3:
+
+```text
+fnm 1.39.0
+Node v22.23.3
+pnpm 11.2.2
+```
+
 ## Notes / blockers
 
 - Working on Intel macOS; Homebrew source builds make Step 1 slow but succeeded.
 - Step 2 venv landed in `~/.venv` because commands ran from home; activate with `source ~/.venv/bin/activate`. Prefer project-local venvs later.
 - Do not paste Python into zsh — enter `python` first.
+- Step 3: `fnm use` failed until `source ~/.zshrc`; `npm i -g pnpm` hit EEXIST because pnpm already existed via nvm — ignore and use existing pnpm.
 - Step 7 assumes the official curriculum repo (with `phases/…/verify.py`). This journal does not clone it; clone that repo separately when ready to run the preflight.
 
 ## Artifacts
 
-- Setup: [setup/01-system-foundation.md](../../setup/01-system-foundation.md), [setup/02-python-uv.md](../../setup/02-python-uv.md)
+- Setup: [setup/01-system-foundation.md](../../setup/01-system-foundation.md), [setup/02-python-uv.md](../../setup/02-python-uv.md), [setup/03-nodejs-fnm-pnpm.md](../../setup/03-nodejs-fnm-pnpm.md)
 - Code: (none yet)
 
 ## Next
 
-1. Step 3 — Node.js with `fnm` + `pnpm`
-2. Continue Steps 4–7
+1. Step 4 — Rust via `rustup`
+2. Continue Steps 5–7
 3. Update this log + `PROGRESS.md` after each step; commit once per step
