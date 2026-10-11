@@ -9,7 +9,9 @@ This is **not** a fork of the curriculum. Official lessons stay upstream; this r
 **Software Engineering Fundamentals**
 
 Course: https://aiengineeringfromscratch.com/  
-Current lesson: [Dev Environment](https://aiengineeringfromscratch.com/lesson?path=phases%2F00-setup-and-tooling%2F01-dev-environment&learningPath=software-engineering-fundamentals)
+Curriculum clone (run lessons here): `~/Desktop/work/personal/ai-engineering-from-scratch`  
+Completed: [Dev Environment](https://aiengineeringfromscratch.com/lesson?path=phases%2F00-setup-and-tooling%2F01-dev-environment&learningPath=software-engineering-fundamentals)  
+Next: Git & Collaboration (Phase 00) — see [PROGRESS.md](PROGRESS.md)
 
 ## How this repo works
 
@@ -36,3 +38,4 @@ Current lesson: [Dev Environment](https://aiengineeringfromscratch.com/lesson?pa
 - macOS 15.7.9 (Intel x86_64)
 - Homebrew at `/usr/local` (source builds; no bottles for Intel)
 - System `curl` stays on PATH; Homebrew `curl` is keg-only
+- Python venv: `~/.venv` (activate before course scripts)
